@@ -1,11 +1,14 @@
 import './App.scss';
+import MennuPlanner from './modules/menuPlanner/MenuPlanner';
 
-import Dashboard from './dashboard/Dashboard';
+import MainLayout from './shared/components/structures/MainLayout';
 
 function App() {
   return (
     <div className="app">
-      <Dashboard />
+      <MainLayout>
+        <MennuPlanner />
+      </MainLayout>
     </div>
   );
 }
