@@ -4,10 +4,9 @@ import Stack from '@mui/material/Stack';
 import AppNavbar from './AppNavbar';
 import Header from './header/Header';
 import SideMenu from './sideNav/SideMenu';
+import { Outlet } from 'react-router-dom';
 
-interface IMainLayout {}
-
-export default function MainLayout({children}: React.PropsWithChildren<IMainLayout>) {
+export default function MainLayout() {
   return (
     <Box sx={{ display: 'flex' }}>
       <SideMenu />
@@ -31,7 +30,7 @@ export default function MainLayout({children}: React.PropsWithChildren<IMainLayo
           }}
         >
           <Header />
-          { children }
+          <Outlet />
         </Stack>
       </Box>
     </Box>

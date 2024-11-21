@@ -6,9 +6,10 @@ import Typography from '@mui/material/Typography';
 import Copyright from '../../shared/components/structures/copyright/Copyright';
 import HighlightedCard from '../../shared/components/ui/HighlightedCard';
 
-export default function MenuPlanner() {
+export default function Recipes() {
   return (
     <Box sx={{ width: '100%', maxWidth: { sm: '100%', md: '1700px' } }}>
+        <p>recipes !!!</p>
       {/* cards */}
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         Overview

@@ -5,19 +5,24 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Stack from '@mui/material/Stack';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import AnalyticsRoundedIcon from '@mui/icons-material/AnalyticsRounded';
-import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
+import LunchDiningIcon from '@mui/icons-material/LunchDining';
 import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
+import { Link, useLocation } from 'react-router-dom';
+import { RoutePath } from '../../../../routes';
 
-const mainListItems = [
-  { text: 'Home', icon: <HomeRoundedIcon /> },
-  { text: 'Analytics', icon: <AnalyticsRoundedIcon /> },
-  { text: 'Clients', icon: <PeopleRoundedIcon /> },
-  { text: 'Tasks', icon: <AssignmentRoundedIcon /> },
+type MainMenuItem = {
+  text: string,
+  icon: JSX.Element,
+  path: RoutePath,
+}
+
+const mainListItems: MainMenuItem[] = [
+  { text: 'Menu planner', icon: <AssignmentRoundedIcon />, path: 'menu-planner' },
+  { text: 'Menu planner Lol', icon: <AssignmentRoundedIcon />, path: 'menu-planner/lol' },
+  { text: 'Recipes', icon: <LunchDiningIcon />, path: 'recipes' },
 ];
 
 const secondaryListItems = [
@@ -27,12 +32,15 @@ const secondaryListItems = [
 ];
 
 export default function MenuContent() {
+  const location = useLocation();
+  console.log(location.pathname);
+
   return (
     <Stack sx={{ flexGrow: 1, p: 1, justifyContent: 'space-between' }}>
       <List dense>
         {mainListItems.map((item, index) => (
           <ListItem key={index} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton selected={index === 0}>
+            <ListItemButton selected={location.pathname.substring(1).startsWith(item.path)} component={Link} to={item.path}>
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItemButton>

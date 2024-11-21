@@ -1,14 +1,12 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.scss';
-import MennuPlanner from './modules/menuPlanner/MenuPlanner';
 
-import MainLayout from './shared/components/structures/MainLayout';
+import router from './routes';
 
 function App() {
   return (
     <div className="app">
-      <MainLayout>
-        <MennuPlanner />
-      </MainLayout>
+      <RouterProvider router={router} future={{v7_startTransition: true}} />
     </div>
   );
 }
