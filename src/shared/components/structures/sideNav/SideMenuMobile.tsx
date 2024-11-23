@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
-import MenuButton from '../../ui/MenuButton';
+import MenuButton from '../../ui/BadgeButton';
 import MenuContent from './MenuContent';
 
 
@@ -51,9 +51,9 @@ export default function SideMenuMobile({ open, toggleDrawer }: SideMenuMobilePro
               Riley Carter
             </Typography>
           </Stack>
-          <MenuButton showBadge>
+          {/* <MenuButton showBadge>
             <NotificationsRoundedIcon />
-          </MenuButton>
+          </MenuButton> */}
         </Stack>
         <Divider />
         <Stack sx={{ flexGrow: 1 }}>

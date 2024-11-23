@@ -9,7 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon, { listItemIconClasses } from '@mui/material/ListItemIcon';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
-import MenuButton from '../../ui/MenuButton';
+import { IconButton } from '@mui/material';
 
 const MenuItem = styled(MuiMenuItem)({
   margin: '2px 0',
@@ -26,13 +26,9 @@ export default function OptionsMenu() {
   };
   return (
     <React.Fragment>
-      <MenuButton
-        aria-label="Open menu"
-        onClick={handleClick}
-        sx={{ borderColor: 'transparent' }}
-      >
+      <IconButton size="small" aria-label="Open menu" onClick={handleClick} sx={{borderColor: 'transparent'}}>
         <MoreVertRoundedIcon />
-      </MenuButton>
+      </IconButton>
       <Menu
         anchorEl={anchorEl}
         id="menu"

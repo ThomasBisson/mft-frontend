@@ -2,19 +2,24 @@ import * as React from 'react';
 import Badge, { badgeClasses } from '@mui/material/Badge';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 
-export interface MenuButtonProps extends IconButtonProps {
-  showBadge?: boolean;
+interface BadgeButtonProps extends IconButtonProps {
+  hideBadge?: boolean;
+  nbNotifs?: number;
+  nbNotifsMax?: number;
 }
 
-export default function MenuButton({
-  showBadge = false,
+export default function BadgeButton({
+  hideBadge = false,
+  nbNotifs = 0,
+  nbNotifsMax = 99,
   ...props
-}: MenuButtonProps) {
+}: BadgeButtonProps) {
   return (
     <Badge
       color="error"
-      variant="dot"
-      invisible={!showBadge}
+      invisible={hideBadge}
+      badgeContent={nbNotifs}
+      max={nbNotifsMax}
       sx={{ [`& .${badgeClasses.badge}`]: { right: 2, top: 2 } }}
     >
       <IconButton size="small" {...props} />

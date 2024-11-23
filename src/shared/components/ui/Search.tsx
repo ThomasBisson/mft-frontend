@@ -3,10 +3,15 @@ import FormControl from '@mui/material/FormControl';
 import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import { SxProps, Theme } from '@mui/material';
 
-export default function Search() {
+interface SearchProps {
+  sx?: SxProps<Theme> | undefined;
+}
+
+export default function Search({sx}: SearchProps) {
   return (
-    <FormControl sx={{ width: { xs: '100%', md: '25ch' } }} variant="outlined">
+    <FormControl sx={sx} variant="outlined">
       <OutlinedInput
         size="small"
         id="search"

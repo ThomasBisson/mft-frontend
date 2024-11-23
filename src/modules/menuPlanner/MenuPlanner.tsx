@@ -4,34 +4,24 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Copyright from '../../shared/components/structures/copyright/Copyright';
-import HighlightedCard from '../../shared/components/ui/HighlightedCard';
+import RecipeCard from './components/ui/RecipeCard';
 
 export default function MenuPlanner() {
   return (
-    <Box sx={{ width: '100%', maxWidth: { sm: '100%', md: '1700px' } }}>
+    <Box sx={{ width: '100%' }}>
       {/* cards */}
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
-        Overview
+        Recipes
       </Typography>
       <Grid
         container
-        spacing={2}
-        columns={12}
-        sx={{ mb: (theme) => theme.spacing(2) }}
+        spacing={1}
       >
-        {[1,2,3,4].map((card, index) => (
-          <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
+        {[1,2,3,4,5,6,7,8,9].map((card, index) => (
+          <Grid key={index} size={{ xs: 12, sm: 6, lg: 3, xl: 2 }}>
+            <RecipeCard title='lol' imagePath='/images/recipes/soupe.jpg' description='desc lol' />
           </Grid>
         ))}
-        <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
-          <HighlightedCard />
-        </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
-            <p>AAAA</p>
-        </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
-            <p>BBB</p>
-        </Grid>
       </Grid>
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         Details

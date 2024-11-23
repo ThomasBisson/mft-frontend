@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Copyright from '../../shared/components/structures/copyright/Copyright';
-import HighlightedCard from '../../shared/components/ui/HighlightedCard';
 
 export default function Recipes() {
   return (
@@ -24,9 +23,6 @@ export default function Recipes() {
           <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
           </Grid>
         ))}
-        <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
-          <HighlightedCard />
-        </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
             <p>AAAA</p>
         </Grid>

@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import SideMenuMobile from './sideNav/SideMenuMobile';
-import MenuButton from '../ui/MenuButton';
+import MenuButton from '../ui/BadgeButton';
 
 const Toolbar = styled(MuiToolbar)({
   width: '100%',
@@ -67,9 +67,9 @@ export default function AppNavbar() {
               Dashboard
             </Typography>
           </Stack>
-          <MenuButton aria-label="menu" onClick={toggleDrawer(true)}>
+          {/* <MenuButton aria-label="menu" onClick={toggleDrawer(true)}>
             <MenuRoundedIcon />
-          </MenuButton>
+          </MenuButton> */}
           <SideMenuMobile open={open} toggleDrawer={toggleDrawer} />
         </Stack>
       </Toolbar>

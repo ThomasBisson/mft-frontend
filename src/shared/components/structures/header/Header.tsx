@@ -1,32 +1,37 @@
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
-import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
+import { NotificationsRounded, ShoppingCartRounded } from '@mui/icons-material';
 
 import Search from '../../ui/Search';
-import NavbarBreadcrumbs from './NavbarBreadcrumbs';
-import MenuButton from '../../ui/MenuButton';
+import BadgeButton from '../../ui/BadgeButton';
+import { Grid2 as Grid } from '@mui/material';
 
 export default function Header() {
+  const 
+  const openBasket = () => {
+
+  }
+
   return (
-    <Stack
-      direction="row"
-      sx={{
-        display: { xs: 'none', md: 'flex' },
-        width: '100%',
-        alignItems: { xs: 'flex-start', md: 'center' },
-        justifyContent: 'space-between',
-        maxWidth: { sm: '100%', md: '1700px' },
-        pt: 1.5,
-      }}
-      spacing={2}
-    >
-      <NavbarBreadcrumbs />
-      <Stack direction="row" sx={{ gap: 1 }}>
-        <Search />
-        <MenuButton showBadge aria-label="Open notifications">
-          <NotificationsRoundedIcon />
-        </MenuButton>
-      </Stack>
-    </Stack>
+    <Grid container sx={{
+      width: '100%',
+      alignItems: 'center',
+      pt: 1.5
+    }}>
+      <Grid size={3} />
+      <Grid size={6}>
+      <Search sx={{width: '100%'}} />
+      </Grid>
+      <Grid size={3}>
+        <Stack direction={'row'} spacing={2} justifyContent={'end'}>
+          <BadgeButton nbNotifs={1} aria-label="Open notifications">
+            <NotificationsRounded />
+          </BadgeButton>
+          <BadgeButton nbNotifs={1} aria-label="Open basket" onClick={openBasket}>
+            <ShoppingCartRounded />
+          </BadgeButton>
+        </Stack>
+      </Grid>
+    </Grid>
   );
 }
