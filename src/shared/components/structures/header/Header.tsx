@@ -1,16 +1,15 @@
 import * as React from 'react';
-import Stack from '@mui/material/Stack';
+import { Grid2 as Grid, Stack } from '@mui/material';
 import { NotificationsRounded, ShoppingCartRounded } from '@mui/icons-material';
+
+import { useAppDispatch } from '../../../hooks/redux-hooks';
+import { open } from '../../../store/basketSlice';
 
 import Search from '../../ui/Search';
 import BadgeButton from '../../ui/BadgeButton';
-import { Grid2 as Grid } from '@mui/material';
 
 export default function Header() {
-  const 
-  const openBasket = () => {
-
-  }
+  const dispatch = useAppDispatch();
 
   return (
     <Grid container sx={{
@@ -27,7 +26,7 @@ export default function Header() {
           <BadgeButton nbNotifs={1} aria-label="Open notifications">
             <NotificationsRounded />
           </BadgeButton>
-          <BadgeButton nbNotifs={1} aria-label="Open basket" onClick={openBasket}>
+          <BadgeButton nbNotifs={1} aria-label="Open basket" onClick={() => dispatch(open())}>
             <ShoppingCartRounded />
           </BadgeButton>
         </Stack>

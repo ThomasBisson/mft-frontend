@@ -5,6 +5,7 @@ import AppNavbar from './AppNavbar';
 import Header from './header/Header';
 import SideMenu from './sideNav/SideMenu';
 import { Outlet } from 'react-router-dom';
+import Basket from './basket/Basket';
 
 export default function MainLayout() {
   return (
@@ -33,6 +34,7 @@ export default function MainLayout() {
           <Outlet />
         </Stack>
       </Box>
+      <Basket />
     </Box>
   );
 }
